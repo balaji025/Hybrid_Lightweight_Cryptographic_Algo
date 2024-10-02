@@ -1,0 +1,126 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #050505;  /* Dark background */
+    margin: 0;                  /* Remove default margin */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;           /* Full viewport height */
+    padding-top: 80px;           /* Add padding equal to header height */
+}
+
+header {
+    background-color: deepskyblue;    /* Same cyan background as the container */
+    width: 100%;
+    text-align: center;
+    padding: 20px;
+    box-shadow: 0 4px 20px rgba(1, 189, 196, 0.1);
+    position: fixed;           /* Fix the header at the top */
+    top: 0;
+    z-index: 1000;             /* Ensure the header stays above other content */
+}
+
+header h1 {
+    font-size: 32px;         /* Larger font for algorithm name */
+    color: black;
+    margin: 0;
+}
+
+header p {
+    font-size: 16px;         /* Smaller font for description */
+    color: black;
+}
+
+/* Main content */
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    padding: 20px;
+    padding-top: 100px; /* Ensures content is not overlapped by header */
+}
+
+.container {
+    max-width: 500px;
+    margin: 0 auto;
+    background: deepskyblue;         /* Cyan background for the container */
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(1, 189, 196, 0.1);
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.container:hover {
+    box-shadow: 0 8px 30px rgba(2, 198, 247, 0.2);
+}
+
+/* Form styling */
+h1 {
+    text-align: center;
+    color: black;             /* Black text color */
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+input[type="text"] {
+    padding: 12px;
+    border: 1px solid #ced4da;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+input[type="text"]:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+button {
+    padding: 12px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Result styling */
+#result {
+    margin-top: 20px;
+    font-size: 18px;
+    color: black;             /* Black text color for the result */
+    text-align: center;       /* Center align the result text */
+    word-wrap: break-word;
+    white-space: pre-wrap;
+    overflow-wrap: break-word;
+}
+
+/* Footer styling */
+footer {
+    background-color: deepskyblue;  /* Same cyan background as the header */
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+}
+
+footer p {
+    font-size: 14px;         /* Smaller font for footer text */
+    color: black;
+    margin: 0;
+}

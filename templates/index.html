@@ -1,0 +1,49 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encryption App</title>
+    
+    <link rel="stylesheet" href="{{url_for('static', filename='styles.css')}}">
+</head>
+<body>
+    <header>
+        <h1>Hybrid Lightweight Cryptographic Algorithm</h1>
+        <p>An advanced hybrid cryptographic algorithm for secure data encryption. This algorithm combines ASCON-128 and Dynamic RSA algorithm.</p>
+    </header>
+
+    <main>
+        <div class="container">
+            <h1>🔐 Encrypt Your Data</h1>
+            <form id="encryptForm">
+                <input type="text" id="user_input" name="user_input" placeholder="Enter text to encrypt" required>
+                <button type="submit">Encrypt</button>
+            </form>
+            <div id="result"></div>
+        </div>
+    </main>
+
+    <footer>
+        <p> You might get different output for same text. This is because, each time random keys are generated. </p>
+        <p> To know more about the algorithm, <a href="https://github.com/balaji025/Hybrid-Lightweight-Cryptography-for-Data-Security" target="_blank">click here.</a> </p>
+        <p> © 2024 Hybrid Encryption System. </p>
+    </footer>
+
+    <script>
+        document.getElementById('encryptForm').addEventListener('submit', async function (e) {
+            e.preventDefault();
+            const userInput = document.getElementById('user_input').value;
+
+            const response = await fetch('/encrypt', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body: new URLSearchParams({ 'user_input': userInput })
+            });
+
+            const result = await response.json();
+            document.getElementById('result').innerText = 'Encrypted Data: ' + '\n\n' + result.encrypted;
+        });
+    </script>
+</body>
+</html>
