@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encrypt Message</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; margin: 50px; }
+        input, button { margin: 10px; padding: 10px; font-size: 16px; }
+    </style>
+</head>
+<body>
+    <h2>Encryption</h2>
+    <p> Welcome to Encryption! </p>
+    <p> Feel free to enter a text of your choice and click the button to get it encrypted. </p>
+    <p> But if you wish to decrypt it, please note that the key and nonce displayed under the cipher text are neccessary to do so. So please note that as well. </p>
+    <form action="/encrypt" method="POST">
+        <input type="text" name="message" placeholder="Enter message" required>
+        <button type="submit">Encrypt</button>
+    </form>
+
+    {% if encrypted_message %}
+        <p><b>Encrypted Text:</b> {{ encrypted_message }}</p>
+        <p><b>Key:</b> {{ key }}</p>
+        <p><b>Nonce:</b> {{ nonce }}</p>
+    {% endif %}
+
+    <br><a href="/">Back</a>
+</body>
+</html>
